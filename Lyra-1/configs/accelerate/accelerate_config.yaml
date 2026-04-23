@@ -6,9 +6,10 @@ downcast_bf16: 'no'
 gpu_ids: all
 machine_rank: 0
 main_training_function: main
-mixed_precision: 'no'
+mixed_precision: bf16
 num_machines: 1
-num_processes: 8
+# using 4 GPUs on my local machine (RTX 3090s)
+num_processes: 4
 rdzv_backend: static
 same_network: true
 tpu_env: []
