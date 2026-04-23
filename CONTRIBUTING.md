@@ -22,6 +22,8 @@ All submissions, including submissions by project members, require review. We us
   Signed-off-by: Your Name <your@email.com>
   ```
 
+  > **Personal note:** If you use VS Code, you can set `"git.alwaysSignOff": true` in your settings to automatically add the sign-off line to every commit without needing to remember the `-s` flag.
+
 * Full text of the DCO:
 
   ```
