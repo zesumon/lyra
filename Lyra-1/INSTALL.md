@@ -26,6 +26,8 @@ pip install git+https://github.com/microsoft/MoGe.git
 pip install --no-build-isolation "git+https://github.com/state-spaces/mamba@v2.2.4"
 ```
 
+> **Note (personal):** The Apex build step takes a while (~10-15 min). Don't cancel it thinking it's hung — it's not.
+
 You can test the environment setup for inference with
 ```bash
 CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python scripts/test_environment.py
@@ -67,24 +69,3 @@ Under the checkpoint repository `checkpoints/<model-name>`, we provide the encod
 │   │   ├── autoencoder.jit
 │   │   ├── model.pt
 ```
-
-### Download GEN3C checkpoints
-
-1. Generate a [Hugging Face](https://huggingface.co/settings/tokens) access token (if you haven't done so already). Set the access token to `Read` permission (default is `Fine-grained`).
-
-2. Log in to Hugging Face with the access token:
-   ```bash
-   huggingface-cli login
-   ```
-
-3. Download the GEN3C model weights from [Hugging Face](https://huggingface.co/nvidia/GEN3C-Cosmos-7B):
-   ```bash
-   CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python scripts/download_gen3c_checkpoints.py --checkpoint_dir checkpoints
-   ```
-
-### Download Lyra checkpoints
-
-1. Download the Lyra model weights from [Hugging Face](https://huggingface.co/nvidia/Lyra):
-   ```bash
-   CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python scripts/download_lyra_checkpoints.py --checkpoint_dir checkpoints
-   ```
