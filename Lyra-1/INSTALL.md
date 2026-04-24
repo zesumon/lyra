@@ -28,6 +28,8 @@ pip install --no-build-isolation "git+https://github.com/state-spaces/mamba@v2.2
 
 > **Note (personal):** The Apex build step takes a while (~10-15 min). Don't cancel it thinking it's hung — it's not.
 
+> **Note (personal):** If the `ln -sf` glob commands fail silently (no nvidia subdirs found), double-check that the transformer-engine install above actually pulled in the nvidia CUDA packages. Running `pip show nvidia-cuda-runtime-cu12` is a quick sanity check.
+
 You can test the environment setup for inference with
 ```bash
 CUDA_HOME=$CONDA_PREFIX PYTHONPATH=$(pwd) python scripts/test_environment.py
@@ -63,9 +65,5 @@ checkpoints/
 Under the checkpoint repository `checkpoints/<model-name>`, we provide the encoder, decoder, the full autoencoder in TorchScript (PyTorch JIT mode) and the native PyTorch checkpoints. For instance for `Cosmos-Tokenize1-CV8x8x8-720p` model:
 ```bash
 ├── checkpoints/
-│   ├── Cosmos-Tokenize1-CV8x8x8-720p/
-│   │   ├── encoder.jit
-│   │   ├── decoder.jit
-│   │   ├── autoencoder.jit
-│   │   ├── model.pt
+│   ├── Cosmos-Token
 ```
