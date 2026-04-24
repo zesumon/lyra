@@ -24,6 +24,8 @@ All submissions, including submissions by project members, require review. We us
 
   > **Personal note:** If you use VS Code, you can set `"git.alwaysSignOff": true` in your settings to automatically add the sign-off line to every commit without needing to remember the `-s` flag.
 
+  > **Personal note:** If you use Git from the command line a lot, you can also add a shell alias like `alias gcs='git commit -s'` to your `.bashrc` or `.zshrc` to save some typing.
+
 * Full text of the DCO:
 
   ```
