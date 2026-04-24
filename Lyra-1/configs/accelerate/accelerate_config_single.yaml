@@ -3,9 +3,11 @@ debug: false
 distributed_type: NO
 enable_cpu_affinity: false
 downcast_bf16: 'no'
+# Set to specific GPU id if you want to restrict to one GPU (e.g., '0')
 gpu_ids: all
 machine_rank: 0
 main_training_function: main
+# Change to 'bf16' or 'fp16' to enable mixed precision training
 mixed_precision: 'no'
 num_machines: 1
 num_processes: 1
